@@ -144,10 +144,7 @@ button {
 #histories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
+  gap: 1%;
 }
 
 .card {
