@@ -80,12 +80,12 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p style="margin-top: 10px;">You took: <span class="bold">${timeTaken.toFixed(0)}</span> seconds</p>
+    <p style="margin-top: 10px;">You took: <span class="bold">${parseInt(timeTaken)}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button style="margin-top: 15px;" onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, parseInt(timeTaken), errorCount);
 
   // restart everything
   startTime = null;
@@ -134,5 +134,5 @@ setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
 
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent.toFixed(0) : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? parseInt(timeSpent) : 0} seconds`;
 }, 1000);
